@@ -24,7 +24,7 @@ pub fn save_race_info(mut race_info: Value) {
     let now = chrono::Local::now();
     let date_str = now.format("%Y%m%d").to_string();
     
-    let mut filename = format!("{}.json", now.format("%Y%m%d_%H%M%S_%3f"));
+    let mut filename = format!("{}.json", now.format("%Y%m%d_%3f_%H%M%S"));
 
     if let Some(horses) = race_info.get("<RaceHorse>k__BackingField").and_then(|v| v.as_array()) {
         let winner_opt = horses.iter().find(|h| {
