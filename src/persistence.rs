@@ -47,7 +47,7 @@ pub fn save_race_info(mut race_info: Value) {
                 .map(|c| if c.is_alphanumeric() || c == ' ' || c == '-' { c } else { '_' })
                 .collect();
 
-            filename = format!("{}-{:.4}s-{}.json", safe_name.trim(), raw_time, date_str);
+            filename = format!("{}-{:.4}s-{}.json", date_str, safe_name.trim(), raw_time);
         }
     }
 
